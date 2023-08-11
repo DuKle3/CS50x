@@ -1,0 +1,33 @@
+.centered {
+    text-align: center;
+}
+
+#grad {
+    background-image: linear-gradient(to bottom right, #ffb3ff , #ffff80);
+    color: '#ffffff';
+    font-family: 'Poppins', sans-serif;
+}
+
+p {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 75px;
+    margin-left: 40px;
+  }
+
+main {
+    font-family: 'Poppins', sans-serif;
+    max-width: 75vw;
+    margin: 50px auto;
+}
+
+main2 {
+    max-width: 75vw;
+    margin: 50px auto;
+}
+
+section {
+    margin: 30px auto;
+    max-width: 60vw;
+}
+

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            // wait DOM loaded
+            document.addEventListener('DOMContentLoaded', function(){
+                // correct one
+                // create a variable to store the element
+                var yes = document.querySelector('.yes');
+                yes.addEventListener('click', function(){
+                    yes.style.backgroundColor = 'green';
+                    document.querySelector('#response1').innerHTML = 'Correct!';
+                });
+
+                // incorrect
+                // create a variable to stroe the elements
+                // because the 'no' maybe is a list
+                // iterate each element in the list
+                var no = document.querySelectorAll('.no');
+                no.forEach(function(each){
+                    each.addEventListener('click', function(){
+                        each.style.backgroundColor = 'red';
+                        document.querySelector('#response1').innerHTML = 'Incorrect';
+                    });
+                });
+
+                // Second section
+                // 1. listen to the button click
+                // 2. check the value
+                document.querySelector('#check').addEventListener('click', function(){
+                    var answer = document.querySelector('#text');
+                    if (answer.value == 8){
+                        answer.style.backgroundColor = 'green';
+                        document.querySelector('#response2').innerHTML = 'Correct!';
+                    }
+                    else {
+                        answer.style.backgroundColor = 'red';
+                        document.querySelector('#response2').innerHTML = 'Incorrect';
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>Who is the father of the atomic bomb</h3>
+                <button class="no">Stephen William Hawking</button>
+                <button class="yes">J. Robert Oppenheimer</button>
+                <button class="no">Erwin Schrödinger</button>
+                <button class="no">Isaac Newton</button>
+                <p id="response1"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>How many planets make up the solar system?</h3>
+                <input type="text" id="text" autofocus autocomplete="off">
+                <button id="check">Check Answer</button>
+                <p id="response2"></p>
+            </div>
+        </div>
+    </body>
+</html>
